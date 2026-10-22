@@ -2,6 +2,8 @@
 
 Grounding EEG-to-language generation in fundamental signal properties.
 
+[![Model weights](https://img.shields.io/badge/Model-Hugging%20Face-yellow)](https://huggingface.co/LyJinAoki/EEG-Captioner)
+
 This standalone implementation provides TUEG EDF preprocessing, deterministic
 feature extraction, feature-grounded caption annotation, 25 signal-level QA
 tasks, the Dual-Domain EEG Encoder, classifier pretraining, QA adaptation,
@@ -40,8 +42,14 @@ export QWEN_PATH=/path/to/Qwen2.5-Omni-7B
 ## Use a trained model
 
 A portable bundle contains `encoder.pt`, `eeg_projector.pt`, `qwen_lora/`, and
-`bundle.json`. It does not contain the Qwen base model. A public weight-download
-URL has not been assigned. Existing research weights can be exported:
+`bundle.json`. It does not contain the Qwen base model. Download the released
+weights from [Hugging Face](https://huggingface.co/LyJinAoki/EEG-Captioner):
+
+```bash
+hf download LyJinAoki/EEG-Captioner --local-dir checkpoints/final
+```
+
+Existing trusted research weights can alternatively be exported:
 
 ```bash
 eeg-captioner export \
