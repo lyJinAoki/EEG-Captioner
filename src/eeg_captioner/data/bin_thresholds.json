@@ -1,0 +1,2603 @@
+{
+  "features": {
+    "centered.asymmetry.alpha.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -1.0,
+      "max": 1.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.10990029325087865,
+        "abs_p67": 0.2799256145954132
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.alpha.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -30.408281326293945,
+      "max": 28.87874984741211,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.22095987200736994,
+        "abs_p67": 0.5772347251574198
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.beta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -1.0,
+      "max": 1.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.08993769685427347,
+        "abs_p67": 0.2320640683174133
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.beta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -31.66618537902832,
+      "max": 30.11572265625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.18053076664606726,
+        "abs_p67": 0.4735542138417561
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.delta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -1.0,
+      "max": 1.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.11949022610982259,
+        "abs_p67": 0.3042556941509247
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.delta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -31.375253677368164,
+      "max": 30.640605926513672,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.241482064127922,
+        "abs_p67": 0.6322815815607706
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.gamma.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -1.0,
+      "max": 1.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.08596760531266529,
+        "abs_p67": 0.23711695770422614
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.gamma.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -29.09963035583496,
+      "max": 29.90851593017578,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.17267793416976926,
+        "abs_p67": 0.4828689197699229
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.theta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -1.0,
+      "max": 1.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.11539776871601741,
+        "abs_p67": 0.2911556859811147
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.asymmetry.theta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 13890801,
+      "n_sampled": 200000,
+      "min": -30.405696868896484,
+      "max": 28.56474494934082,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.23416340847810108,
+        "abs_p67": 0.6011241873105366
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.roi_ratio.alpha.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 24159735,
+      "n_sampled": 200000,
+      "min": -6.467341899871826,
+      "max": 5.475505828857422,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.33335960904757184,
+        "abs_p67": 0.7943979899088541
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.roi_ratio.beta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 24159735,
+      "n_sampled": 200000,
+      "min": -5.503493309020996,
+      "max": 5.853773593902588,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.2662729124228159,
+        "abs_p67": 0.6619839668273926
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.roi_ratio.delta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 24159735,
+      "n_sampled": 200000,
+      "min": -7.011488437652588,
+      "max": 7.256685733795166,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.3662498394648234,
+        "abs_p67": 0.8539625803629557
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.roi_ratio.gamma.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 24159735,
+      "n_sampled": 200000,
+      "min": -17.700727462768555,
+      "max": 17.393447875976562,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.2552238504091899,
+        "abs_p67": 0.6905806660652161
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "centered.roi_ratio.theta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 24159735,
+      "n_sampled": 200000,
+      "min": -5.57829475402832,
+      "max": 6.552984714508057,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.34129327535629267,
+        "abs_p67": 0.7971461415290831
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.alpha.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -1.7646653652191162,
+      "max": 1.7976093292236328,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.09253901243209839,
+        "abs_p67": 0.2280742029349009
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.alpha.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -13.56728458404541,
+      "max": 9.599255561828613,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.20715342958768207,
+        "abs_p67": 0.5139840841293332
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.beta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -1.6371638774871826,
+      "max": 1.6989800930023193,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.06078380346298218,
+        "abs_p67": 0.1492803990840912
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.beta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -15.222221374511719,
+      "max": 8.953421592712402,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.13300619522730509,
+        "abs_p67": 0.329700767993927
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.delta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -1.8049278259277344,
+      "max": 1.854681134223938,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.1136213739713033,
+        "abs_p67": 0.28051167726516724
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.delta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -17.787063598632812,
+      "max": 7.8327484130859375,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.25550694266955054,
+        "abs_p67": 0.6393912434577942
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.gamma.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -1.7160788774490356,
+      "max": 1.810459017753601,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.05697437127431233,
+        "abs_p67": 0.14223693311214444
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.gamma.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -5.530184745788574,
+      "max": 6.930944919586182,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.12596593300501505,
+        "abs_p67": 0.31610001126925147
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.theta.lateralization_index": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -1.7433878183364868,
+      "max": 1.7781257629394531,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.10120192170143127,
+        "abs_p67": 0.24677622814973196
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.asymmetry.theta.log": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 9260534,
+      "n_sampled": 200000,
+      "min": -10.682245254516602,
+      "max": 8.65128231048584,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.22670403619607288,
+        "abs_p67": 0.557822545369466
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.alpha.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -1188.8189697265625,
+      "max": 1249.42626953125,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.0378222465515137,
+        "abs_p67": 5.256393114725747
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.alpha.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.8905845284461975,
+      "max": 0.8813897371292114,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.02191476027170817,
+        "abs_p67": 0.0696942980090777
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.beta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -765.375244140625,
+      "max": 821.6101684570312,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.642989953358968,
+        "abs_p67": 3.027139902114868
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.beta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.8148325085639954,
+      "max": 0.8395242094993591,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.016823600977659222,
+        "abs_p67": 0.05743843813737232
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.delta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -3115.07373046875,
+      "max": 3344.61279296875,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 6.691905975341792,
+        "abs_p67": 29.312749226888002
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.delta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.9997281432151794,
+      "max": 0.9996863007545471,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.05993664264678955,
+        "abs_p67": 0.15622660517692563
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.gamma.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -389.2000732421875,
+      "max": 356.71514892578125,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.0996891458829244,
+        "abs_p67": 0.560138980547587
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.gamma.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.8551191091537476,
+      "max": 0.9734865427017212,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.0031905529710153737,
+        "abs_p67": 0.01472801218430201
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.theta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -1501.644287109375,
+      "max": 999.006591796875,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.4928954044977822,
+        "abs_p67": 6.5437122980753575
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.theta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.9143792986869812,
+      "max": 0.8198651671409607,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.029598544041315716,
+        "abs_p67": 0.08055161436398824
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.bandpower.total": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -3129.05224609375,
+      "max": 3354.570556640625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 11.177206675211588,
+        "abs_p67": 42.90331141153971
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.alpha_oscillatory_power": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -1167.4664306640625,
+      "max": 1233.855224609375,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.7731418013572692,
+        "abs_p67": 4.192565123240152
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.aperiodic_exponent": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -5.935429096221924,
+      "max": 5.894866943359375,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.16228361924489337,
+        "abs_p67": 0.370570550362269
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.iaf_hz": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -4.804804801940918,
+      "max": 4.804804801940918,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.6006002426147461,
+        "abs_p67": 1.5015010833740234
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.ratio_alpha_theta": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -615.202392578125,
+      "max": 783.0802001953125,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.22653985023498535,
+        "abs_p67": 0.7943072915077208
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.ratio_theta_beta": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -2184.25634765625,
+      "max": 1737.1070556640625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.2849009732405345,
+        "abs_p67": 1.2389518419901528
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.sef_hz": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -42.94294357299805,
+      "max": 42.94293975830078,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.5015015602111816,
+        "abs_p67": 4.204202651977539
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.spectral.spectral_entropy": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.8372533321380615,
+      "max": 0.853306770324707,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.03560912609100342,
+        "abs_p67": 0.09163357814153035
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.hjorth_complexity": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -2855.102783203125,
+      "max": 2424.709228515625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.14582093556722003,
+        "abs_p67": 0.5251678228378296
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.hjorth_mobility": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -1.994003176689148,
+      "max": 1.9871609210968018,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.03701875607172648,
+        "abs_p67": 0.09903166691462197
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.line_length": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -35098.046875,
+      "max": 39561.2890625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 63.53889973958333,
+        "abs_p67": 190.1944986979166
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.mean_amplitude": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -118.11660766601562,
+      "max": 112.84101867675781,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.8226097027460733,
+        "abs_p67": 5.130963325500488
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.peak_to_peak": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -158.32708740234375,
+      "max": 162.5855255126953,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 4.913377126057942,
+        "abs_p67": 13.034456888834635
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.rms": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -57.49895477294922,
+      "max": 64.15437316894531,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.8308607737223307,
+        "abs_p67": 2.4503529866536455
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.std": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -53.87572479248047,
+      "max": 50.81690979003906,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.7515211105346679,
+        "abs_p67": 2.2243852615356445
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.channel.time_domain.zero_crossing_rate": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 23272376,
+      "n_sampled": 200000,
+      "min": -0.9849849939346313,
+      "max": 0.9879721999168396,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.01668360084295273,
+        "abs_p67": 0.04524826258420944
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.alpha.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -962.830078125,
+      "max": 1098.656005859375,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.0270900726318355,
+        "abs_p67": 4.894454638163249
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.alpha.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -0.8210228085517883,
+      "max": 0.8785610198974609,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.019565876573324203,
+        "abs_p67": 0.060539398342370966
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.beta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -575.9719848632812,
+      "max": 589.2545776367188,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.6227721373240152,
+        "abs_p67": 2.748814900716145
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.beta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -0.7196409106254578,
+      "max": 0.7255399227142334,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.015204992145299911,
+        "abs_p67": 0.04864819844563802
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.delta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -2006.7547607421875,
+      "max": 2147.19970703125,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 5.302195231119791,
+        "abs_p67": 22.115146636962887
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.delta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -0.9700119495391846,
+      "max": 0.9225003719329834,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.049517174561818436,
+        "abs_p67": 0.12602299451828003
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.gamma.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -199.5780029296875,
+      "max": 350.7120361328125,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.0948618600765864,
+        "abs_p67": 0.4988515774408976
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.gamma.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -0.5966046452522278,
+      "max": 0.9700239896774292,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.0030326917767524715,
+        "abs_p67": 0.013117832442124682
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.theta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -935.6259155273438,
+      "max": 747.3018188476562,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.3953547080357869,
+        "abs_p67": 5.764571825663249
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi.bandpower.theta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -0.8282666206359863,
+      "max": 0.7435721158981323,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.025003708899021145,
+        "abs_p67": 0.06639399131139119
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi_ratio.alpha": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 16106490,
+      "n_sampled": 200000,
+      "min": -136.79180908203125,
+      "max": 176.56715393066406,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.11763445536295572,
+        "abs_p67": 0.35766211152076716
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi_ratio.beta": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 16106490,
+      "n_sampled": 200000,
+      "min": -133.46334838867188,
+      "max": 124.54676055908203,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.08771562576293941,
+        "abs_p67": 0.25579824050267536
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi_ratio.delta": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 16106490,
+      "n_sampled": 200000,
+      "min": -1410.2735595703125,
+      "max": 649.3860473632812,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.17254370450973508,
+        "abs_p67": 0.5698554317156473
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi_ratio.gamma": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 16106490,
+      "n_sampled": 200000,
+      "min": -34179748.0,
+      "max": 31548618.0,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.08346668879191078,
+        "abs_p67": 0.2534631093343099
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.roi_ratio.theta": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 16106490,
+      "n_sampled": 200000,
+      "min": -446.0890808105469,
+      "max": 484.08355712890625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.13710404932498932,
+        "abs_p67": 0.4196709990501403
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.alpha.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -1.86289232661968e-21,
+      "max": 1.442439107172586e-21,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.9279792078037737e-24,
+        "abs_p67": 7.939024100848252e-24
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.alpha.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -0.8304156064987183,
+      "max": 0.8400281071662903,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.018692523241043084,
+        "abs_p67": 0.05628030002117157
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.beta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -8.328682870578967e-22,
+      "max": 9.024811093798459e-22,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.148227016501714e-24,
+        "abs_p67": 4.4155408430305976e-24
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.beta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -0.6904415488243103,
+      "max": 0.6559021472930908,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.013932032510638234,
+        "abs_p67": 0.04496525724728902
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.delta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -5.590027610702974e-21,
+      "max": 5.40829465687601e-21,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 8.912752192625091e-24,
+        "abs_p67": 3.776861856995933e-23
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.delta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -0.9329761266708374,
+      "max": 0.9965829849243164,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.04838069279988606,
+        "abs_p67": 0.1232090393702189
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.gamma.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -4.0108553564244003e-22,
+      "max": 2.624324399326638e-22,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 2.0929571073098997e-25,
+        "abs_p67": 8.788454798186672e-25
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.gamma.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -0.6341291069984436,
+      "max": 0.7759197950363159,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.002839194688325127,
+        "abs_p67": 0.012302916496992111
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.theta.absolute": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -3.6159978334524695e-21,
+      "max": 2.549474247413392e-21,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 2.444408051221249e-24,
+        "abs_p67": 9.484976904915214e-24
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.theta.relative": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -0.6966958045959473,
+      "max": 0.8475629091262817,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.023862461249033597,
+        "abs_p67": 0.062457052369912454
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "change.source.bandpower.total": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 6574666,
+      "n_sampled": 200000,
+      "min": -5.636211592305996e-21,
+      "max": 5.451391251466163e-21,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.6091492926358506e-23,
+        "abs_p67": 5.716229797097654e-23
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "channel.bandpower.alpha.absolute": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 4.754173860345436e-27,
+      "max": 1662.9302978515625,
+      "thresholds": {
+        "p20": 1.547403192520142,
+        "p40": 4.162661647796631,
+        "p60": 8.763317298889158,
+        "p80": 20.323553085327156
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.alpha.relative": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 4.754174010306207e-15,
+      "max": 0.9787931442260742,
+      "thresholds": {
+        "p20": 0.0344197228550911,
+        "p40": 0.0727737858891487,
+        "p60": 0.12816947996616362,
+        "p80": 0.23594007492065433
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.beta.absolute": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 1.988692149414927e-26,
+      "max": 1197.3404541015625,
+      "thresholds": {
+        "p20": 1.5127180576324466,
+        "p40": 4.239504337310791,
+        "p60": 8.602628707885742,
+        "p80": 17.279762649536135
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.beta.relative": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 1.9886920750574952e-14,
+      "max": 0.9994179010391235,
+      "thresholds": {
+        "p20": 0.028246860951185226,
+        "p40": 0.07107782661914828,
+        "p60": 0.1323638558387756,
+        "p80": 0.23263883292675022
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.delta.absolute": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 6.69540146628094e-27,
+      "max": 3467.609619140625,
+      "thresholds": {
+        "p20": 8.913137817382815,
+        "p40": 19.76658630371095,
+        "p60": 38.75335540771483,
+        "p80": 87.7650009155274
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.delta.relative": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 6.695401577724771e-15,
+      "max": 0.9999997615814209,
+      "thresholds": {
+        "p20": 0.2398450016975403,
+        "p40": 0.42545413374900826,
+        "p60": 0.6156704545021057,
+        "p80": 0.8021521687507629
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.gamma.absolute": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 2.280056846237539e-26,
+      "max": 776.36474609375,
+      "thresholds": {
+        "p20": 0.2408334344625474,
+        "p40": 0.7918033838272095,
+        "p60": 1.7871312141418456,
+        "p80": 4.171173667907715
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.gamma.relative": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 2.2800568399462817e-14,
+      "max": 1.0,
+      "thresholds": {
+        "p20": 0.004389650095254183,
+        "p40": 0.012415700219571592,
+        "p60": 0.027533482015132903,
+        "p80": 0.0646509900689125
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.theta.absolute": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 5.954003948981384e-27,
+      "max": 1516.2618408203125,
+      "thresholds": {
+        "p20": 2.241346740722656,
+        "p40": 5.457444477081299,
+        "p60": 10.737414932250974,
+        "p80": 22.298598098754887
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.theta.relative": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 5.954003803388449e-15,
+      "max": 0.9554066061973572,
+      "thresholds": {
+        "p20": 0.05393377617001534,
+        "p40": 0.09421312808990479,
+        "p60": 0.14351142346858975,
+        "p80": 0.22286336421966554
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.bandpower.total": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 9.999999960041972e-13,
+      "max": 3489.559326171875,
+      "thresholds": {
+        "p20": 27.12960586547852,
+        "p40": 55.127445983886716,
+        "p60": 93.22494506835938,
+        "p80": 165.10404357910159
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.alpha_oscillatory_power": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.0,
+      "max": 1641.4678955078125,
+      "thresholds": {
+        "p20": 0.6806041479110718,
+        "p40": 2.19149193763733,
+        "p60": 5.443804264068603,
+        "p80": 14.671996688842793
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.aperiodic_exponent": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": -2.893859624862671,
+      "max": 6.288788318634033,
+      "thresholds": {
+        "p20": 0.9699168801307678,
+        "p40": 1.4554323196411134,
+        "p60": 1.8983588218688965,
+        "p80": 2.4022699832916263
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.iaf_hz": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 8.108108520507812,
+      "max": 12.91291332244873,
+      "thresholds": {
+        "p20": 8.408408164978027,
+        "p40": 9.00900936126709,
+        "p60": 9.909910202026367,
+        "p80": 11.11111068725586
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.ratio_alpha_theta": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 4.177496615640061e-15,
+      "max": 1108.8453369140625,
+      "thresholds": {
+        "p20": 0.32418128848075867,
+        "p40": 0.5994383811950684,
+        "p60": 1.0519241094589233,
+        "p80": 2.106592035293579
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.ratio_theta_beta": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 5.256417114182961e-15,
+      "max": 2189.256103515625,
+      "thresholds": {
+        "p20": 0.40310512781143193,
+        "p40": 0.9020674228668214,
+        "p60": 1.8270948648452756,
+        "p80": 4.093211841583252
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.sef_hz": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.9009009003639221,
+      "max": 44.74474334716797,
+      "thresholds": {
+        "p20": 11.711711883544922,
+        "p40": 18.61861801147461,
+        "p60": 25.2252254486084,
+        "p80": 32.732730865478516
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.spectral.spectral_entropy": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 1.4953415025317773e-12,
+      "max": 0.9972558617591858,
+      "thresholds": {
+        "p20": 0.520016348361969,
+        "p40": 0.6329011678695678,
+        "p60": 0.7090616226196289,
+        "p80": 0.7810737490653992
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.hjorth_activity": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 8.663351611613856e-13,
+      "max": 4959.87841796875,
+      "thresholds": {
+        "p20": 54.22114944458008,
+        "p40": 99.85052795410158,
+        "p60": 162.76895446777343,
+        "p80": 278.1526062011719
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.hjorth_complexity": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.2853618562221527,
+      "max": 2861.22607421875,
+      "thresholds": {
+        "p20": 1.577562189102173,
+        "p40": 2.179909896850586,
+        "p60": 2.8136101722717286,
+        "p80": 3.9514678955078124
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.hjorth_mobility": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.0003304875863250345,
+      "max": 2.0000033378601074,
+      "thresholds": {
+        "p20": 0.3256782293319702,
+        "p40": 0.45858123898506165,
+        "p60": 0.6368596434593201,
+        "p80": 0.9779875993728637
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.kurtosis": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": -2.0,
+      "max": 323.9505615234375,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.23773744702339172,
+        "abs_p67": 0.5536111791928608
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "channel.time_domain.line_length": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.001235990785062313,
+      "max": 68428.703125,
+      "thresholds": {
+        "p20": 1857.9203125000001,
+        "p40": 2527.5962890625,
+        "p60": 3449.63017578125,
+        "p80": 5598.60478515625
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.mean_amplitude": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": -86.56788635253906,
+      "max": 84.91687774658203,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 1.105504830678304,
+        "abs_p67": 3.0931566556294747
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "channel.time_domain.peak_to_peak": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 2.040548679360654e-06,
+      "max": 199.79666137695312,
+      "thresholds": {
+        "p20": 41.82325973510742,
+        "p40": 56.910623168945314,
+        "p60": 71.3978042602539,
+        "p80": 90.7623764038086
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.rms": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 1.3661388038599398e-06,
+      "max": 86.87403106689453,
+      "thresholds": {
+        "p20": 7.788199234008789,
+        "p40": 10.583693313598634,
+        "p60": 13.492547988891602,
+        "p80": 17.706922912597655
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.skewness": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": -16.65665054321289,
+      "max": 15.4541015625,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 0.09831428527832031,
+        "abs_p67": 0.27416869997978205
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "channel.time_domain.std": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 9.307713071393664e-07,
+      "max": 70.42640686035156,
+      "thresholds": {
+        "p20": 7.356818675994873,
+        "p40": 10.01230697631836,
+        "p60": 12.750905609130859,
+        "p80": 16.706943893432616
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.variance": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 8.663351611613856e-13,
+      "max": 4959.87841796875,
+      "thresholds": {
+        "p20": 54.14282073974609,
+        "p40": 99.86985321044922,
+        "p60": 162.14241943359374,
+        "p80": 278.34295654296886
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "channel.time_domain.zero_crossing_rate": {
+      "method": "quintile",
+      "n_valid": 34908564,
+      "n_sampled": 200000,
+      "min": 0.0,
+      "max": 1.0,
+      "thresholds": {
+        "p20": 0.09159158915281296,
+        "p40": 0.13684210181236267,
+        "p60": 0.1984962373971939,
+        "p80": 0.3323308229446411
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "composition.channel.bandpower.relative": {
+      "method": "quintile",
+      "n_valid": 174542820,
+      "n_sampled": 200000,
+      "min": 4.754174010306207e-15,
+      "max": 1.0,
+      "thresholds": {
+        "p20": 0.026361785829067237,
+        "p40": 0.07584638744592669,
+        "p60": 0.15559329986572265,
+        "p80": 0.3335557878017427
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "composition.roi.bandpower.relative": {
+      "method": "quintile",
+      "n_valid": 60432060,
+      "n_sampled": 200000,
+      "min": 1.064154190114075e-13,
+      "max": 0.9999849796295166,
+      "thresholds": {
+        "p20": 0.03178416788578033,
+        "p40": 0.08256876319646836,
+        "p60": 0.1568763166666031,
+        "p80": 0.31261041760444647
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "composition.source.bandpower.relative": {
+      "method": "quintile",
+      "n_valid": 49309995,
+      "n_sampled": 200000,
+      "min": 7.287873082795215e-11,
+      "max": 0.9991875886917114,
+      "thresholds": {
+        "p20": 0.03199343234300613,
+        "p40": 0.08276143074035645,
+        "p60": 0.1566823959350586,
+        "p80": 0.308135211467743
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "quality.bad_channel_ratio": {
+      "method": "quintile",
+      "n_valid": 17925,
+      "n_sampled": 17925,
+      "min": 0.0,
+      "max": 0.29411764705882354,
+      "thresholds": {
+        "p20": 0.0,
+        "p40": 0.0,
+        "p60": 0.05,
+        "p80": 0.1
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.alpha.absolute": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 2.1409657850604643e-25,
+      "max": 1352.628173828125,
+      "thresholds": {
+        "p20": 1.9041741609573366,
+        "p40": 4.560841751098633,
+        "p60": 9.213279342651367,
+        "p80": 21.022554779052737
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.alpha.relative": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 2.140965898490832e-13,
+      "max": 0.942604124546051,
+      "thresholds": {
+        "p20": 0.04282773509621621,
+        "p40": 0.08292305022478104,
+        "p60": 0.13919582962989807,
+        "p80": 0.2488664776086808
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.beta.absolute": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 6.970239373064775e-25,
+      "max": 1145.3009033203125,
+      "thresholds": {
+        "p20": 1.8088702917099,
+        "p40": 4.56337366104126,
+        "p60": 8.831599044799804,
+        "p80": 16.987552642822266
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.beta.relative": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 6.970239272915957e-13,
+      "max": 0.985070526599884,
+      "thresholds": {
+        "p20": 0.03513300195336342,
+        "p40": 0.07969511300325395,
+        "p60": 0.13915035128593442,
+        "p80": 0.23287843167781838
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.delta.absolute": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 1.0641541326585802e-25,
+      "max": 2718.171142578125,
+      "thresholds": {
+        "p20": 8.798038291931153,
+        "p40": 18.1919116973877,
+        "p60": 34.74326934814453,
+        "p80": 75.09384765625
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.delta.relative": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 1.064154190114075e-13,
+      "max": 0.9999849796295166,
+      "thresholds": {
+        "p20": 0.21072903871536255,
+        "p40": 0.373392277956009,
+        "p60": 0.5493785738945006,
+        "p80": 0.7346876263618469
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.gamma.absolute": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 6.784289080486079e-25,
+      "max": 380.03411865234375,
+      "thresholds": {
+        "p20": 0.2812769770622253,
+        "p40": 0.8474551320075991,
+        "p60": 1.831764793395996,
+        "p80": 4.136297130584717
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.gamma.relative": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 6.78428884251514e-13,
+      "max": 0.9986923336982727,
+      "thresholds": {
+        "p20": 0.005419174861162901,
+        "p40": 0.01397673282772303,
+        "p60": 0.030165010690689085,
+        "p80": 0.06826458573341371
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.theta.absolute": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 1.0962475827328162e-25,
+      "max": 1038.7340087890625,
+      "thresholds": {
+        "p20": 2.5738566875457765,
+        "p40": 5.664184188842774,
+        "p60": 10.64541664123535,
+        "p80": 21.371075820922854
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "roi.bandpower.theta.relative": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 1.0962475230965468e-13,
+      "max": 0.9256017208099365,
+      "thresholds": {
+        "p20": 0.06359396129846573,
+        "p40": 0.10086038857698441,
+        "p60": 0.14532721042633057,
+        "p80": 0.21561640799045564
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.alpha.absolute": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 1.5713180070013471e-40,
+      "max": 2.4642881748626767e-21,
+      "thresholds": {
+        "p20": 4.371665425001382e-24,
+        "p40": 9.369676311328662e-24,
+        "p60": 1.7308852767513074e-23,
+        "p80": 3.5178834918684343e-23
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.alpha.relative": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 1.571317936877037e-10,
+      "max": 0.9348675608634949,
+      "thresholds": {
+        "p20": 0.0436117947101593,
+        "p40": 0.08278748840093612,
+        "p60": 0.1382071018218994,
+        "p80": 0.24111067056655885
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.beta.absolute": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 7.255138721133881e-40,
+      "max": 1.530774867815021e-21,
+      "thresholds": {
+        "p20": 4.095362080896201e-24,
+        "p40": 8.697572499878878e-24,
+        "p60": 1.5639724381805645e-23,
+        "p80": 2.9847118435622575e-23
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.beta.relative": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 7.255138712025655e-10,
+      "max": 0.9381005167961121,
+      "thresholds": {
+        "p20": 0.03285190910100938,
+        "p40": 0.07790761590003968,
+        "p60": 0.14141137301921844,
+        "p80": 0.2379330009222031
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.delta.absolute": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 7.287873053260509e-41,
+      "max": 6.364647519235506e-21,
+      "thresholds": {
+        "p20": 1.556992880881095e-23,
+        "p40": 3.213327583536524e-23,
+        "p60": 6.208351732396192e-23,
+        "p80": 1.4215184402354786e-22
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.delta.relative": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 7.287873082795215e-11,
+      "max": 0.9991875886917114,
+      "thresholds": {
+        "p20": 0.20929759740829468,
+        "p40": 0.3720006763935089,
+        "p60": 0.5527756094932557,
+        "p80": 0.7399548888206482
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.gamma.absolute": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 6.8563572041563245e-40,
+      "max": 5.342962736562093e-22,
+      "thresholds": {
+        "p20": 6.699029486887857e-25,
+        "p40": 1.7294082451468082e-24,
+        "p60": 3.490598591759702e-24,
+        "p80": 7.626424819472673e-24
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.gamma.relative": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 6.856357148699033e-10,
+      "max": 0.9956977367401123,
+      "thresholds": {
+        "p20": 0.005262447055429221,
+        "p40": 0.014136506244540216,
+        "p60": 0.030666862055659293,
+        "p80": 0.07041561901569368
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.theta.absolute": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 1.1796831121918473e-40,
+      "max": 4.194637733017805e-21,
+      "thresholds": {
+        "p20": 5.284143989514148e-24,
+        "p40": 1.072684460335665e-23,
+        "p60": 1.964995527593747e-23,
+        "p80": 3.971059785002025e-23
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.theta.relative": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 1.179683156715683e-10,
+      "max": 0.9015252590179443,
+      "thresholds": {
+        "p20": 0.06564773023128509,
+        "p40": 0.10167729258537293,
+        "p60": 0.1446865290403366,
+        "p80": 0.21230818629264833
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "source.bandpower.total": {
+      "method": "quintile",
+      "n_valid": 9861999,
+      "n_sampled": 200000,
+      "min": 1.0000000031710769e-30,
+      "max": 6.759418254886088e-21,
+      "thresholds": {
+        "p20": 5.586475641414915e-23,
+        "p40": 9.91658982194048e-23,
+        "p60": 1.5882999681753816e-22,
+        "p80": 2.7838851867893546e-22
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    },
+    "change.roi.bandpower.total": {
+      "method": "zero_centered_magnitude",
+      "n_valid": 8057608,
+      "n_sampled": 200000,
+      "min": -2006.0967265963554,
+      "max": 2166.2741852998734,
+      "center": 0.0,
+      "thresholds": {
+        "abs_p33": 9.689238945643107,
+        "abs_p67": 34.54406229654946
+      },
+      "labels": [
+        "strongly negative",
+        "moderately negative",
+        "near zero",
+        "moderately positive",
+        "strongly positive"
+      ]
+    },
+    "roi.bandpower.total": {
+      "method": "quintile",
+      "n_valid": 12086412,
+      "n_sampled": 200000,
+      "min": 1.8055895954002715e-24,
+      "max": 2739.7646766901016,
+      "thresholds": {
+        "p20": 29.00408946275711,
+        "p40": 53.71163524389267,
+        "p60": 86.33553750514983,
+        "p80": 145.03281375169755
+      },
+      "labels": [
+        "very low",
+        "low",
+        "moderate",
+        "high",
+        "very high"
+      ]
+    }
+  }
+}

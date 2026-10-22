@@ -1,0 +1,12 @@
+manifest: data/manifest.jsonl
+encoder_checkpoint: checkpoints/final/encoder.pt
+checkpoint: checkpoints/final
+qwen_path: ${QWEN_PATH}
+output_dir: runs/evaluation
+task: joint
+split: test
+device: cuda
+dtype: bfloat16
+batch_size: 4
+per_class: 25
+caption_cases: 500

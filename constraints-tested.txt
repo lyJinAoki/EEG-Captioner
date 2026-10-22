@@ -1,0 +1,13 @@
+# Direct dependencies used for local validation (Python 3.10).
+# Install the CUDA/CPU torch wheel appropriate for your hardware first.
+torch==2.5.1
+numpy==2.2.6
+scipy==1.15.3
+h5py==3.16.0
+PyYAML==6.0.3
+mne==1.12.1
+transformers==5.12.1
+peft==0.19.1
+accelerate==1.15.0
+safetensors==0.8.0
+pytest==9.1.1

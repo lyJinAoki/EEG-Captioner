@@ -1,0 +1,1 @@
+"""EEG feature extraction package."""

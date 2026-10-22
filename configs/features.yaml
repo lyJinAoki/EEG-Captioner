@@ -1,0 +1,108 @@
+pipeline_version: segment_10s_thirds_v2
+
+input_root: data/processed
+output_root: data/features
+
+max_files: null
+overwrite: false
+use_labram_channels: true
+
+segmentation:
+  enabled: true
+  duration_sec: 10.0
+  overlap_sec: 0.0
+  min_duration_sec: 10.0
+  thirds:
+    enabled: true
+    names: [early, middle, last]
+
+bad_channel:
+  enabled: true
+  action: mark
+  always_bad_channels: [A1, A2, T1, T2]
+  peak_threshold_uv: 500.0
+  flat_threshold_uv: 1.0
+  bad_percent_threshold: 5.0
+  min_bad_duration_sec: 0.02
+  max_bad_channel_ratio_for_trial: 0.3
+  max_bad_time_ratio_for_trial: 0.2
+  # After trial-level bad-channel mask: reject whole 10s segment (skip features)
+  # if any remaining channel has any sample |V| > hard_peak_threshold_uv.
+  segment_reject:
+    enabled: true
+    hard_peak_threshold_uv: 100.0
+
+features:
+  bandpower:
+    enabled: true
+    bands:
+      delta: [0.5, 4.0]
+      theta: [4.0, 8.0]
+      alpha: [8.0, 13.0]
+      beta: [13.0, 30.0]
+      gamma: [30.0, 45.0]
+    analysis_range: [0.5, 45.0]
+    welch_window_sec: 3.33
+    welch_overlap: 0.5
+    relative: true
+    log_power: false
+  time_domain:
+    enabled: true
+  spectral_advanced:
+    enabled: true
+    analysis_range: [0.5, 45.0]
+    alpha_range: [8.0, 13.0]
+    fooof_fit_range: [2.0, 40.0]
+    welch_window_sec: 3.33
+    welch_overlap: 0.5
+    sef_percent: 95.0
+  spatial:
+    enabled: true
+    bands:
+      delta: [0.5, 4.0]
+      theta: [4.0, 8.0]
+      alpha: [8.0, 13.0]
+      beta: [13.0, 30.0]
+      gamma: [30.0, 45.0]
+    analysis_range: [0.5, 45.0]
+    welch_window_sec: 3.33
+    welch_overlap: 0.5
+    roi_min_good_channels: 1
+  source_network:
+    enabled: true
+    artifacts_dir: data/source_artifacts
+    sample_rate_hz: 200.0
+    channels:
+      - Fp1
+      - Fp2
+      - F3
+      - F4
+      - Fz
+      - C3
+      - C4
+      - Cz
+      - P3
+      - P4
+      - Pz
+      - O1
+      - O2
+      - T7
+      - T8
+      - P7
+      - P8
+    montage: standard_1020
+    inverse_method: eLORETA
+    noise_cov_method: ad_hoc
+    head_model: bem
+    source_spacing: ico4
+    epoch_duration_sec: 10.0
+    epoch_overlap: 0.0
+    max_epochs: 1
+    min_channels: 17
+    bands:
+      delta: [0.5, 4.0]
+      theta: [4.0, 8.0]
+      alpha: [8.0, 13.0]
+      beta: [13.0, 30.0]
+      gamma: [30.0, 45.0]
+    analysis_range: [0.5, 45.0]

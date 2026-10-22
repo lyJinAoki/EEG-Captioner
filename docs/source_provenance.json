@@ -1,0 +1,237 @@
+[
+  {
+    "source": "code/eeg_llm/train_understanding_probe_spectral.py",
+    "sha256": "42b764eacaae93be99b7520f4d75f373c9ef4db257594a7cc6981710f87c460a",
+    "symbols": [
+      "FixedWelchPSD",
+      "learning_rate_factor"
+    ],
+    "destination": "src/eeg_captioner/models/spectral.py"
+  },
+  {
+    "source": "code/eeg_llm/train_understanding_probe_spatial_v51.py",
+    "sha256": "4228a7b04eea87843a87ac2c1f02c44a59528dc1a3b8ee4cacbc192a8c66ab07",
+    "symbols": [
+      "transformer_encoder",
+      "SampleSharedFrequencyTokenizer",
+      "DualDomainSpatialEncoder"
+    ],
+    "destination": "src/eeg_captioner/models/encoder.py"
+  },
+  {
+    "source": "code/eeg_llm/train_understanding_probe_dualdomain_v5.py",
+    "sha256": "e40ff58e17e8e0df385e7810fe1e80fd551ba6fa4abc681d1116081b69af2909",
+    "symbols": [
+      "TaskSpecificQueryDecoders"
+    ],
+    "destination": "src/eeg_captioner/models/heads.py"
+  },
+  {
+    "source": "code/eeg_llm/atomic_qwen_frontend.py",
+    "sha256": "ca80dca87a0db4104d6ef7adb802ae431528172ded7758d637ae783bd389410f",
+    "symbols": [
+      "AtomicEEGProjector",
+      "weighted_causal_token_loss"
+    ],
+    "destination": "src/eeg_captioner/models/projector.py"
+  },
+  {
+    "source": "code/eeg_llm/evaluate_eeg_understanding.py",
+    "sha256": "e5cb71729f6b2783aeb8b4e82c1212be6430f38eadc436480a1dc9b906d53983",
+    "symbols": [
+      "PERIODS",
+      "BANDS",
+      "ROIS",
+      "ROI_CHANNELS",
+      "ALL_CHANNELS",
+      "TYPE_OPTIONS",
+      "PART_RE",
+      "MODEL_CHANNELS",
+      "split_filenames",
+      "parse_summary_features",
+      "decisive_argmax",
+      "required_channels",
+      "script_answer"
+    ],
+    "destination": "src/eeg_captioner/data/rules.py"
+  },
+  {
+    "source": "code/eeg_llm/audit_bin_aligned_understanding.py",
+    "sha256": "3748f97d246889ab1a8c1de70ae48e366f28171752829f4f1359dbce252b2e18",
+    "symbols": [
+      "Thresholds",
+      "unique_bin_argmax",
+      "audit_case"
+    ],
+    "destination": "src/eeg_captioner/data/binning.py"
+  },
+  {
+    "source": "code/eeg_llm/train_understanding_probe_v2.py",
+    "sha256": "aad1cadd84ebd199cf0b4aae6d4b7d0d7b1b62c2ccc5d00d80baddb486fc5ce1",
+    "symbols": [
+      "classification_metrics",
+      "summarize_predictions"
+    ],
+    "destination": "src/eeg_captioner/data/qa_metrics.py"
+  },
+  {
+    "source": "code/eeg_llm/train_relational_caption.py",
+    "sha256": "d44680072c9a75890fad76e7bea12d1312ccfe5c30a14f96c655deee9fbe717c",
+    "symbols": [
+      "_normalized_caption",
+      "_lcs_length",
+      "caption_overlap_metrics",
+      "corpus_bleu"
+    ],
+    "destination": "src/eeg_captioner/evaluation/caption_metrics.py"
+  },
+  {
+    "source": "code/eeg_llm/train_understanding_probe_dualdomain_v5.py",
+    "sha256": "e40ff58e17e8e0df385e7810fe1e80fd551ba6fa4abc681d1116081b69af2909",
+    "symbols": [
+      "HybridHeadBatchSampler"
+    ],
+    "destination": "src/eeg_captioner/data/sampling.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/__init__.py",
+    "sha256": "0fe7120b7f21b1b41b57971378f3b90643a4c58254849f08d233df6df06f717a",
+    "destination": "src/eeg_captioner/features/__init__.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/bad_channel.py",
+    "sha256": "bb65ba1d3bef94103de150b2dfb41db2d0185300c101f0a0cdb30d7c2d6c525e",
+    "destination": "src/eeg_captioner/features/bad_channel.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/feature_registry.py",
+    "sha256": "ad1b6f0843013fdf2b93fbfd971ebf1ba9321298e3f165feafe6ff7da7fa09b6",
+    "destination": "src/eeg_captioner/features/feature_registry.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/__init__.py",
+    "sha256": "563eab841d864bea126d3e332c6597e989ff93ea0e5423eea2c97b535854c6fc",
+    "destination": "src/eeg_captioner/features/features/__init__.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/bandpower.py",
+    "sha256": "fb4f85adc44329adec7a90b2d316f853eeaa63d45cce3ce5d4d355dbba470e21",
+    "destination": "src/eeg_captioner/features/features/bandpower.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/source_network.py",
+    "sha256": "b16daad85453c109d333dc8a3065ce54c184f42a2b71a62157f562d8f1000e73",
+    "destination": "src/eeg_captioner/features/features/source_network.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/spatial.py",
+    "sha256": "1d0e133d06aec648161fa9b9e63028cb2e907b068d044b96f8e34848275f8761",
+    "destination": "src/eeg_captioner/features/features/spatial.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/spectral_advanced.py",
+    "sha256": "d633a3944e88a384243f2126e47757a6cecc5bdf41b601541a70b832d7798955",
+    "destination": "src/eeg_captioner/features/features/spectral_advanced.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/features/time_domain.py",
+    "sha256": "d054032ef5a6d31f4708ffa7a532b098839f278cc0a95f23fe3474e4fc5f6783",
+    "destination": "src/eeg_captioner/features/features/time_domain.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/io_tueg_h5.py",
+    "sha256": "9a7f9e197064b8d9ca6584b9c6bde6463bd48b1fed1989a1776a392707458abe",
+    "destination": "src/eeg_captioner/features/io_tueg_h5.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/pipeline_runner.py",
+    "sha256": "766fa3faeb5574a8dd1dfe72eb3e55163443d1017b853511d214345c73efb212",
+    "destination": "src/eeg_captioner/features/pipeline_runner.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/segmentation.py",
+    "sha256": "2471268ba5425e6bb904f53202fd21e3168b25f8be3f9cdb10933a9f1060ccc9",
+    "destination": "src/eeg_captioner/features/segmentation.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/src/source_artifacts.py",
+    "sha256": "ef78256a12b03883bcfa8bc076927f632e212a9ce2d9bcce153d47ceb66e5110",
+    "destination": "src/eeg_captioner/features/source_artifacts.py"
+  },
+  {
+    "source": "data/eeg_processed/002-000tuh_eeg/build_tueg_h5.py",
+    "sha256": "f0a05f9a997530ed8152ae8d4dfb0dbf790cca403a88316416698c9f072c0e17",
+    "symbols": [
+      "STANDARD_1020",
+      "STANDARD_SET",
+      "STANDARD_BY_UPPER",
+      "canonicalize_channel_name",
+      "get_eeg_channel_names",
+      "compute_labram_mapping",
+      "process_single_edf",
+      "process_group",
+      "discover_subjects"
+    ],
+    "destination": "src/eeg_captioner/preprocessing/tueg.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/scripts/fill_summary_templates.py",
+    "sha256": "b859ae7781cfcb18d5d11cfcab415a1129bd2287ba0d72b575352284d02d549d",
+    "destination": "src/eeg_captioner/features/summary.py"
+  },
+  {
+    "source": "code/eeg_feature_extraction/scripts/summary_template_v1.md",
+    "sha256": "748e65dc1a59e7d23c9a0b515fbc6028344a766633f690c7250e9245f7f33f0d",
+    "destination": "src/eeg_captioner/features/templates/summary_template_v1.md"
+  },
+  {
+    "source": "code/eeg_feature_extraction/scripts/summary_template_v2.md",
+    "sha256": "aaa7ae10ce2f94cab0406761022166e7515a962a0c42f98f2856e99b801e3898",
+    "destination": "src/eeg_captioner/features/templates/summary_template_v2.md"
+  },
+  {
+    "source": "code/eeg_feature_extraction/outputs/summary_bin/bin_thresholds.json",
+    "sha256": "de0c65df4a7c577f9510268205e3cc0539e9b831ae849ea55e477644eb1e78f2",
+    "destination": "src/eeg_captioner/data/bin_thresholds.json"
+  },
+  {
+    "source": "code/eeg_llm/artifacts/eeg_understanding/v5_dualdomain25/questions_25.jsonl",
+    "sha256": "9d26f86fd415faca19e88cc9d310b71018a6dceb333a21a1b705113a81465671",
+    "destination": "src/eeg_captioner/data/questions_25.jsonl"
+  },
+  {
+    "source": "code/eeg_llm/train_atomic_qa_v1.py",
+    "sha256": "e09a43b3a597eed862d46e59ec6c94e1a1eca8d4d63d34c3dc6f47b80fb5da01",
+    "destination": "src/eeg_captioner/models/language_ops.py",
+    "symbols": [
+      "forward_atomic_batch",
+      "generate_batch",
+      "scheduled_learning_rate"
+    ]
+  },
+  {
+    "source": "code/eeg_llm/train_relational_qa.py",
+    "sha256": "cdae0fb2ffca4e2b5ee79749051371ea5c14ff85656205a2942f82350d2e63c5",
+    "destination": "src/eeg_captioner/models/prompts.py",
+    "symbols": [
+      "SYSTEM_PROMPT"
+    ]
+  },
+  {
+    "source": "code/eeg_llm/train_relational_caption.py",
+    "sha256": "d44680072c9a75890fad76e7bea12d1312ccfe5c30a14f96c655deee9fbe717c",
+    "destination": "src/eeg_captioner/models/prompts.py",
+    "symbols": [
+      "SYSTEM_PROMPT",
+      "CAPTION_QUESTION"
+    ]
+  },
+  {
+    "source": "code/eeg_feature_extraction/scripts/caption_gen.py",
+    "sha256": "7241f9dacd0f2fe7098040f13cf405ef9764310b53314b072d2a93fc58402fee",
+    "destination": "src/eeg_captioner/prompts/caption_annotation.txt",
+    "symbols": [
+      "SYSTEM_PROMPT"
+    ]
+  }
+]
