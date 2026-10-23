@@ -3,6 +3,14 @@
 Validated locally on 2026-10-22. These are execution checks, not a new full-scale
 reproduction of the paper's metrics.
 
+## Original-caption release checks — 2026-10-23
+
+- All 204,460 archived captions passed shard SHA-256, per-caption SHA-256, unique-ID and count checks across nine shards (43,913,952 compressed bytes).
+- Targeted CPU checks: **11 passed** across `tests/test_captions.py`, `tests/test_pipeline.py` and `tests/test_safety.py`. These cover unchanged-text round trips, corruption/duplicate/path rejection, plain-text and archived caption preparation, and historical annotation parameters/compaction with mocked HTTP.
+- Source archive builds successfully. Its contents include all caption shards and the packaging tool, and exclude raw EEG, weights, local validation outputs and environments. Documentation file links and `git diff --check` passed.
+- Existing server environment required pytest dependency repair and the installed scientific-computing/CUDA runtime library paths. No full training, new paid annotation, GPU inference or historical cohort reconstruction was performed for this release addition.
+- The archived collection is larger than the unrecovered 160,781-sample paper snapshot; passing integrity checks does not certify exact historical membership. See [annotations](../annotations/README.md).
+
 ## Automated tests
 
 `pytest -q`: **15 passed**. All tests ran, including the optional MNE and

@@ -19,6 +19,11 @@ def main(argv=None):
     for name in ("summaries", "output", "base-url", "model"):
         p.add_argument("--" + name, required=True)
     p.add_argument("--api-key-env", default="EEG_CAPTION_API_KEY"); p.add_argument("--limit", type=int)
+    p.add_argument("--temperature", type=float, default=0.0)
+    p.add_argument("--max-tokens", type=int, default=2048)
+    p.add_argument("--compact-input", action="store_true")
+    p = sub.add_parser("verify-captions", help="Verify original caption archive hashes and counts")
+    p.add_argument("--captions", required=True)
     p = sub.add_parser("prepare", help="Build portable manifest and 25 QA labels")
     for name in ("processed", "summaries", "captions", "output"):
         p.add_argument("--" + name, required=True)
@@ -61,7 +66,11 @@ def main(argv=None):
         build_source_artifacts(load_config(args.config)["features"]["source_network"])
     elif args.command == "annotate":
         from .data.annotate import annotate
-        annotate(args.summaries, args.output, args.base_url, args.model, args.api_key_env, args.limit)
+        annotate(args.summaries, args.output, args.base_url, args.model, args.api_key_env, args.limit,
+                 args.temperature, args.max_tokens, args.compact_input)
+    elif args.command == "verify-captions":
+        from .data.captions import verify_captions
+        print(json.dumps(verify_captions(args.captions)))
     elif args.command == "prepare":
         from .data.prepare import prepare
         print(prepare(args.processed, args.summaries, args.captions, args.output, not args.numeric_only, args.seed))

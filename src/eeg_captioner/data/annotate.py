@@ -7,7 +7,10 @@ from eeg_captioner.io import write_json
 from .summaries import segment_summaries
 
 
-def annotate(summaries, output, base_url, model, api_key_env="EEG_CAPTION_API_KEY", limit=None):
+def annotate(summaries, output, base_url, model, api_key_env="EEG_CAPTION_API_KEY", limit=None,
+             temperature=0.0, max_tokens=2048, compact_input=False):
+    if max_tokens < 1 or temperature < 0:
+        raise ValueError("Invalid annotation generation parameters")
     key = os.environ.get(api_key_env)
     if not key:
         raise ValueError(f"Set {api_key_env}; credentials are never stored in the project")
@@ -26,12 +29,16 @@ def annotate(summaries, output, base_url, model, api_key_env="EEG_CAPTION_API_KE
         target = output / (p.stem + ".txt")
         if target.exists() and target.stat().st_size:
             continue
+        summary = p.read_text()
+        if compact_input:
+            from .caption_input import compact_summary
+            summary = compact_summary(summary)
         for attempt in range(5):
             try:
                 response = requests.post(base_url.rstrip("/") + "/chat/completions",
                     headers={"Authorization": f"Bearer {key}"}, timeout=180,
                     json={"model": model, "messages": [{"role": "system", "content": prompt},
-                          {"role": "user", "content": p.read_text()}], "temperature": 0, "max_tokens": 2048})
+                          {"role": "user", "content": summary}], "temperature": temperature, "max_tokens": max_tokens})
                 response.raise_for_status()
                 choice = response.json()["choices"][0]
                 text = choice["message"]["content"].strip()
@@ -45,4 +52,6 @@ def annotate(summaries, output, base_url, model, api_key_env="EEG_CAPTION_API_KE
                     raise
                 time.sleep(min(2 ** attempt, 16))
     write_json(output / "annotation_config.json", {"model": model, "base_url": base_url,
-                                                   "temperature": 0, "prompt": prompt})
+                                                   "temperature": temperature, "max_tokens": max_tokens,
+                                                   "input_transform": "historical_compact_summary" if compact_input else "identity",
+                                                   "prompt": prompt})

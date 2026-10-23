@@ -8,6 +8,7 @@ from eeg_captioner.io import read_jsonl, write_jsonl, write_json, sha256
 from .rules import parse_summary_features, script_answer, split_filenames, MODEL_CHANNELS
 from .binning import Thresholds, audit_case
 from .summaries import SEGMENT_STEM, segment_summaries
+from .captions import iter_captions
 
 
 def prepare(processed, summaries, captions, output, bin_consistency=True, seed=42):
@@ -18,10 +19,8 @@ def prepare(processed, summaries, captions, output, bin_consistency=True, seed=4
     thresholds = Thresholds(thresholds_path)
     rows, rejected = [], Counter()
     cap_map = {}
-    for p in sorted(captions.rglob("*.txt")):
-        if p.stem in cap_map:
-            raise ValueError(f"Duplicate caption stem: {p.stem}")
-        cap_map[p.stem] = p
+    for key, text in iter_captions(captions):
+        cap_map[key] = text
     metadata = {}
     for p in segment_summaries(summaries):
         match = SEGMENT_STEM.fullmatch(p.stem)
@@ -50,7 +49,7 @@ def prepare(processed, summaries, captions, output, bin_consistency=True, seed=4
             labels.append(-100 if label is None else q["options"].index(label))
             if reason:
                 rejected[reason] += 1
-        caption = cap_map[p.stem].read_text(encoding="utf-8").strip()
+        caption = cap_map[p.stem].strip()
         if not caption:
             rejected["empty_caption"] += 1
             continue

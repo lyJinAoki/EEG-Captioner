@@ -79,3 +79,7 @@ The class-balanced training sampler requires at least one training example of
 every class of every QA condition. A tiny subset can violate this requirement;
 the trainer then reports the missing head/class rather than inventing targets.
 Use the synthetic tests for a small complete-coverage smoke run.
+
+## Retained caption archive
+
+`prepare --captions annotations/captions` accepts the original checked JSONL gzip archive, as an alternative to directories of `.txt` files. See [annotation documentation](../annotations/README.md). The retained 204,460-caption collection is larger than the 160,781-sample historical training snapshot; exact snapshot membership is not yet recovered. Building a new manifest does not certify that it uses the paper's exact samples or partitions.

@@ -1,0 +1,171 @@
+{
+  "schema": "eeg-captioner-captions-v1",
+  "records": 204460,
+  "source_batches": {
+    "0-1000": 25747,
+    "1000-2000": 31213,
+    "10000-11000": 173,
+    "11000-12000": 4,
+    "12000-13000": 5,
+    "13000-14000": 794,
+    "14000-15000": 4630,
+    "15000-16000": 3583,
+    "16000-16611": 6507,
+    "2000-3000": 18193,
+    "3000-4000": 27910,
+    "4000-5000": 29162,
+    "5000-6000": 28733,
+    "6000-7000": 27760,
+    "7000-8000": 12,
+    "8000-9000": 31,
+    "9000-10000": 3
+  },
+  "source": "eeg_feature_extraction/outputs/caption",
+  "collection_date": "2026-10-23",
+  "paper_snapshot_records": 160781,
+  "paper_snapshot_membership_recovered": false,
+  "scope": "Retained caption collection after generation continued; not the recovered paper training snapshot.",
+  "usage_summaries": {
+    "0-1000": {
+      "last_model": "deepseek-chat",
+      "completed": 19959,
+      "failed": 0
+    },
+    "1000-2000": {
+      "last_model": "deepseek-chat",
+      "completed": 26765,
+      "failed": 0
+    },
+    "10000-11000": {
+      "last_model": "deepseek-chat",
+      "completed": 173,
+      "failed": 0
+    },
+    "11000-12000": {
+      "last_model": "deepseek-chat",
+      "completed": 4,
+      "failed": 0
+    },
+    "12000-13000": {
+      "last_model": "deepseek-chat",
+      "completed": 5,
+      "failed": 0
+    },
+    "13000-14000": {
+      "last_model": "deepseek-chat",
+      "completed": 794,
+      "failed": 0
+    },
+    "14000-15000": {
+      "last_model": "deepseek-chat",
+      "completed": 4630,
+      "failed": 0
+    },
+    "15000-16000": {
+      "last_model": "deepseek-chat",
+      "completed": 3583,
+      "failed": 0
+    },
+    "16000-16611": {
+      "last_model": "deepseek-chat",
+      "completed": 6507,
+      "failed": 0
+    },
+    "2000-3000": {
+      "last_model": "deepseek-chat",
+      "completed": 18193,
+      "failed": 0
+    },
+    "3000-4000": {
+      "last_model": "deepseek-chat",
+      "completed": 27910,
+      "failed": 0
+    },
+    "4000-5000": {
+      "last_model": "deepseek-chat",
+      "completed": 29162,
+      "failed": 1336
+    },
+    "5000-6000": {
+      "last_model": "deepseek-chat",
+      "completed": 28733,
+      "failed": 0
+    },
+    "6000-7000": {
+      "last_model": "deepseek-chat",
+      "completed": 27760,
+      "failed": 243
+    },
+    "7000-8000": {
+      "last_model": "deepseek-chat",
+      "completed": 12,
+      "failed": 0
+    },
+    "8000-9000": {
+      "last_model": "deepseek-chat",
+      "completed": 31,
+      "failed": 0
+    },
+    "9000-10000": {
+      "last_model": "deepseek-chat",
+      "completed": 3,
+      "failed": 0
+    }
+  },
+  "shards": [
+    {
+      "file": "part-00000.jsonl.gz",
+      "records": 25000,
+      "bytes": 5335582,
+      "sha256": "92d339893b151447afebc56b6d695c82497a524dd3a3c920929878b071da1006"
+    },
+    {
+      "file": "part-00001.jsonl.gz",
+      "records": 25000,
+      "bytes": 5359442,
+      "sha256": "34ed185a62f957b7de2d5bb9b1cd24d3b94a924478000a975d91bf67d412bb39"
+    },
+    {
+      "file": "part-00002.jsonl.gz",
+      "records": 25000,
+      "bytes": 5260416,
+      "sha256": "a3f5df4b36fd0a74bdd6628d52d33a605ef545b590400b83ec20b5042022757e"
+    },
+    {
+      "file": "part-00003.jsonl.gz",
+      "records": 25000,
+      "bytes": 5426524,
+      "sha256": "c389b362348045ecc050de846a388987408770f87b1d4172af457fe63a609bd0"
+    },
+    {
+      "file": "part-00004.jsonl.gz",
+      "records": 25000,
+      "bytes": 5434776,
+      "sha256": "cc75a9acb40a10d07d51d4a9757e7e2573dbeb6398e2b0285709a751145b3920"
+    },
+    {
+      "file": "part-00005.jsonl.gz",
+      "records": 25000,
+      "bytes": 5446593,
+      "sha256": "7f164b9f471d901ec93a18f88cc42d7049aae0f4643ac36aa33a053c02ba4f59"
+    },
+    {
+      "file": "part-00006.jsonl.gz",
+      "records": 25000,
+      "bytes": 5459186,
+      "sha256": "8ce9ace6a832f52e2102a81333e8852c666c1397ba13a15e2241eba6dbc9882f"
+    },
+    {
+      "file": "part-00007.jsonl.gz",
+      "records": 25000,
+      "bytes": 5262230,
+      "sha256": "4800d6a78ebfc1794ea38a58601ef688c969c4e6adaab8297de3ce7d2febacfc"
+    },
+    {
+      "file": "part-00008.jsonl.gz",
+      "records": 4460,
+      "bytes": 929203,
+      "sha256": "c96acfd0f67f7a5d9d18fbd5896ee6e07e2b28475848f1714f795717d3b3064e"
+    }
+  ]
+}

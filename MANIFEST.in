@@ -1,7 +1,7 @@
-include README.md LICENSE NOTICE .gitignore constraints-tested.txt
+include README.md LICENSE NOTICE CITATION.bib .gitignore constraints-tested.txt
 recursive-include configs *.yaml
-recursive-include docs *.md *.json
-recursive-include scripts *.sh
+recursive-include docs *.md *.json *.png
+recursive-include scripts *.sh *.py
 recursive-include tests *.py
 recursive-include .github *.yml
 prune local
@@ -10,3 +10,4 @@ prune checkpoints
 prune runs
 prune .venv
 global-exclude __pycache__ *.py[cod] *.pt *.pth *.safetensors *.h5 *.edf
+recursive-include annotations *.md *.json *.gz

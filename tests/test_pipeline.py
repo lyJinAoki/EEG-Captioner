@@ -38,7 +38,8 @@ def test_preprocess_filters_units_and_h5(tmp_path, monkeypatch):
         assert 0.1 < float(f["data"][:].std()) < 10
 
 
-def test_features_summary_manifest(tmp_path):
+@pytest.mark.parametrize("archived", [False, True])
+def test_features_summary_manifest(tmp_path, archived):
     from eeg_captioner.features.pipeline_runner import run_pipeline
     from eeg_captioner.cli import main
     from eeg_captioner.data.prepare import prepare
@@ -55,8 +56,14 @@ def test_features_summary_manifest(tmp_path):
     summaries = list(segment_summaries(tmp_path / "summaries"))
     assert len(summaries) == 3
     captions = tmp_path / "captions"; captions.mkdir()
+    batch = captions / "batch"; batch.mkdir()
     for p in summaries:
-        (captions / (p.stem + ".txt")).write_text("Synthetic EEG caption for pipeline testing.")
+        (batch / (p.stem + ".txt")).write_text("Synthetic EEG caption for pipeline testing.")
+    if archived:
+        import runpy
+        package = runpy.run_path(str(Path(__file__).parents[1] / "scripts/package_captions.py"))["package"]
+        package(captions, tmp_path / "archive", workers=1)
+        captions = tmp_path / "archive"
     manifest = tmp_path / "manifest.jsonl"
     assert prepare(raw, tmp_path / "summaries", captions, manifest) == 3
     rows = load_manifest(manifest)

@@ -75,3 +75,7 @@ hashes. Qwen base weights remain an external dependency. Optimizer state,
 training caches, patient data, old experiment scripts and research histories
 are excluded. Weights remain ignored by Git and can be distributed separately.
 
+
+## Original annotation collection
+
+The source release now includes retained original caption text in `annotations/captions`, avoiding a requirement to regenerate targets through a changing API. Generation continued after the paper's matched cache was frozen: the archive contains 204,460 captions, while the paper used 160,781 segments. The historical matched/label caches were not found during release preparation. Consequently the archive preserves original targets but does not by itself recover the exact historical cohort, QA-label matrix, or split assignments. See [annotations](../annotations/README.md).

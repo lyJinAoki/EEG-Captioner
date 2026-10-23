@@ -233,5 +233,13 @@
     "symbols": [
       "SYSTEM_PROMPT"
     ]
+  },
+  {
+    "source": "code/eeg_feature_extraction/scripts/caption_unified.py",
+    "sha256": "11ec03116b7d8cf3b454ee75a37d63560c723da4b6b58c79c8c7f51e45c8e1b5",
+    "symbols": [
+      "compact_summary"
+    ],
+    "destination": "src/eeg_captioner/data/caption_input.py"
   }
 ]

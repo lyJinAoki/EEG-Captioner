@@ -2,7 +2,11 @@ This release extracts mainline EEG-Captioner research code and adds packaging,
 portable manifests, CLI entry points, and independent split evaluation.
 See docs/source_provenance.json for source hashes and extracted symbols.
 
-Qwen model weights, TUEG data, and MNE template/atlas assets are not covered by
+Retained generated caption text is included separately under annotations/;
+see its provenance and historical-snapshot limitations. No EEG recordings
+or EEG tensors are included.
+
+Qwen model weights, TUEG recordings, and MNE template/atlas assets are not covered by
 this repository's MIT license and are not included in the source release.
 Their upstream terms continue to apply. CBraMod/LaBraM code and weights are
 not included or required by this mainline release.

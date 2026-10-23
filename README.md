@@ -118,9 +118,25 @@ The paper dataset pairs **160,781 ten-second EEG segments** with feature-grounde
 | Temporal pattern | How a feature changes across the three intervals |
 | Lateral dominance | Left/right activity for a fixed interval and frequency band |
 
-TUEG v2.0.2 recordings must be obtained separately under the corpus access conditions. Recordings and derived patient samples are not included in this repository or the model bundle.
+TUEG v2.0.2 recordings must be obtained separately under the corpus access conditions. Raw recordings and EEG tensors are not included. The original generated caption collection is provided in [`annotations/captions/`](annotations/README.md).
 
-After EDF preprocessing, build the annotations and manifest from the repository root:
+### Use retained original captions
+
+The repository includes **204,460 original captions**, preserved with sample IDs and SHA-256 checksums. This is the later retained collection: generation continued after the paper's **160,781-sample training snapshot** was created. Exact historical snapshot membership has not yet been recovered; the larger archive must not be described as that snapshot.
+
+After preprocessing EEG and extracting features/summaries, use these captions without calling an annotation API:
+
+```bash
+eeg-captioner verify-captions --captions annotations/captions
+eeg-captioner prepare --processed data/processed --summaries data/summaries \
+  --captions annotations/captions --output data/manifest.jsonl
+```
+
+See [original annotations](annotations/README.md) for provenance, schema and snapshot limitations, and [release selection](docs/source_release.md) for the original-project inventory.
+
+### Generate a new annotation set
+
+To produce new captions instead, run the feature/annotation pipeline from the repository root:
 
 ```bash
 # Prepare source-space template/atlas assets, then extract numerical features.
@@ -202,6 +218,7 @@ src/eeg_captioner/
 ├── evaluation/                QA and caption metrics
 └── prompts/                   Caption annotation instructions
 tests/                         Numerical, data, and language checks
+annotations/                   Original caption shards, IDs, hashes, provenance
 docs/                          Data, reproduction, provenance, validation
 ```
 
