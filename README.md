@@ -2,16 +2,15 @@
 
 ### Grounding EEG-to-Language Generation in Fundamental Signal Properties
 
-**Leyuan Jin, Jiahao Mei, Yixuan Yuan, Shimeng Li, Mengyue Wu, Yue Ding**
-
-X-LANCE Lab, Shanghai Jiao Tong University · Shanghai Mental Health Center
-
+[![Paper](https://img.shields.io/badge/arXiv-2610.30995-b31b1b.svg)](https://arxiv.org/abs/2610.30995)
 [![Model weights](https://img.shields.io/badge/Weights-Hugging%20Face-yellow)](https://huggingface.co/LyJinAoki/EEG-Captioner)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 
 [Overview](#overview) · [Results](#results) · [Quick start](#quick-start) · [Data](#data) · [Training](#training) · [Evaluation](#evaluation)
 
 ## Overview
+
+Code for [**EEG-Captioner: Grounding EEG-to-Language Generation in Fundamental Signal Properties**](https://arxiv.org/abs/2610.30995).
 
 Fluent EEG descriptions do not necessarily reflect an understanding of the underlying signal. **EEG-Captioner** connects EEG waveforms to a language model and trains it to both describe the signal and answer questions about quantitatively measurable EEG properties.
 
@@ -224,16 +223,7 @@ Export only trusted research checkpoints: migration reads their Python metadata.
 
 ## Citation
 
-To cite this code release:
-
-```bibtex
-@misc{jin_eeg_captioner,
-  title        = {EEG-Captioner: Grounding EEG-to-Language Generation in Fundamental Signal Properties},
-  author       = {Jin, Leyuan and Mei, Jiahao and Yuan, Yixuan and Li, Shimeng and Wu, Mengyue and Ding, Yue},
-  howpublished = {Research code},
-  url          = {https://github.com/lyJinAoki/EEG-Captioner}
-}
-```
+If you use EEG-Captioner in your research, please cite [the paper](https://arxiv.org/abs/2610.30995). The citation is available in [BibTeX format](CITATION.bib).
 
 ## License and acknowledgments
 
