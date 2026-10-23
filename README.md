@@ -1,165 +1,240 @@
 # EEG-Captioner
 
-Grounding EEG-to-language generation in fundamental signal properties.
+### Grounding EEG-to-Language Generation in Fundamental Signal Properties
 
-[![Model weights](https://img.shields.io/badge/Model-Hugging%20Face-yellow)](https://huggingface.co/LyJinAoki/EEG-Captioner)
+**Leyuan Jin, Jiahao Mei, Yixuan Yuan, Shimeng Li, Mengyue Wu, Yue Ding**
 
-This standalone implementation provides TUEG EDF preprocessing, deterministic
-feature extraction, feature-grounded caption annotation, 25 signal-level QA
-tasks, the Dual-Domain EEG Encoder, classifier pretraining, QA adaptation,
-three-stage joint QA/caption training, inference, and evaluation.
+X-LANCE Lab, Shanghai Jiao Tong University · Shanghai Mental Health Center
 
-The mainline does not import CBraMod, LaBraM, or any original research repository.
-Baseline experiments and the full Table 2/Table 3 index are outside this release.
+[![Model weights](https://img.shields.io/badge/Weights-Hugging%20Face-yellow)](https://huggingface.co/LyJinAoki/EEG-Captioner)
+[![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 
-## Install
+[Overview](#overview) · [Results](#results) · [Quick start](#quick-start) · [Data](#data) · [Training](#training) · [Evaluation](#evaluation)
 
-Use Python 3.10 or newer. Install a PyTorch build appropriate for your machine,
-then install the package. The tested LLM API versions are constrained in
-`pyproject.toml`; see [validation](docs/validation.md) for checks actually run.
+## Overview
+
+Fluent EEG descriptions do not necessarily reflect an understanding of the underlying signal. **EEG-Captioner** connects EEG waveforms to a language model and trains it to both describe the signal and answer questions about quantitatively measurable EEG properties.
+
+The framework combines:
+
+- **Signal-level supervision:** 25 predefined QA conditions across five property families, paired with feature-grounded captions for 160,781 EEG segments from TUEG v2.0.2.
+- **A Dual-Domain EEG Encoder:** parallel temporal-waveform and spectral-spatial branches fuse local dynamics with cross-channel frequency information.
+- **Joint QA and caption adaptation:** EEG tokens are projected into Qwen2.5-Omni-7B Thinker, with trainable projector and LoRA adapters supporting both tasks.
+
+![EEG-Captioner: temporal and spectral-spatial encoding, fusion, and language-based QA and caption generation](docs/assets/architecture.png)
+
+This repository provides the main EEG-Captioner pipeline: preprocessing, feature extraction, annotation, dataset preparation, training, inference, and evaluation. The CBraMod/LaBraM comparison implementations are outside this release; neither is required to run EEG-Captioner.
+
+## Results
+
+The manuscript reports the following results with the same frozen, QA-pretrained Dual-Domain encoder and different language-adaptation strategies:
+
+| Language adaptation | QA Macro-BA (%) ↑ | Factual consistency (%) ↑ | ROUGE-L ↑ | BLEU-4 ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| Caption only | 47.82 | 82.06 | 0.4722 | 0.3124 |
+| Signal-level QA only | 86.06 | 44.10 | 0.1470 | 0.0083 |
+| **Signal-level QA + caption** | **88.81** | **83.46** | **0.4865** | **0.3302** |
+
+Macro-BA averages balanced accuracy over the 25 QA conditions, equivalently over five equally weighted five-condition families. Factual consistency is an external GPT-based assessment against numerical EEG feature summaries.
+
+These are **paper-reported results**, not results from a fresh run of this release. Historical QA evaluation used a combined validation/test diagnostic set for checkpoint selection. The public recipes instead separate validation and test evaluation. Caption-only and joint adaptation also differ in initialization and training exposure. See [evaluation](#evaluation) and the [reproduction notes](docs/reproduction.md) when interpreting or reproducing these numbers.
+
+## Quick start
+
+### 1. Install
+
+Use Python 3.10 or newer and a working PyTorch installation for your CUDA environment. The commands below assume a Linux shell; the distributed training recipes use `torchrun`.
 
 ```bash
+git clone https://github.com/lyJinAoki/EEG-Captioner.git
+cd EEG-Captioner
+
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e '.[llm,preprocess,annotation,dev]'
+python -m pip install -e '.[llm,preprocess,annotation]'
 eeg-captioner --help
-pytest -q
 ```
 
-Qwen2.5-Omni-7B must be downloaded separately. Point `QWEN_PATH` to its local
-snapshot (containing config, tokenizer and weight shards). Model loading uses
-local files only. A 7B model requires substantial RAM/VRAM; the paper's language
-training recipes use two GPUs with microbatch 1 and gradient accumulation 2.
-CPU tests use a small real Qwen model and synthetic signals.
-`constraints-tested.txt` records the direct versions used in local validation;
-pass `-c constraints-tested.txt` to pip when recreating that Python 3.10 stack.
+Dependency ranges are declared in [`pyproject.toml`](pyproject.toml). To recreate the recorded Python 3.10 validation stack, add `-c constraints-tested.txt` to the package installation command. See the [validation record](docs/validation.md) for the tested environment and execution scope.
+
+### 2. Download model weights
+
+The [EEG-Captioner bundle](https://huggingface.co/LyJinAoki/EEG-Captioner) contains the EEG encoder, projector, and LoRA adapter. Download the [Qwen2.5-Omni-7B base model](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) separately; it is not included in the bundle.
 
 ```bash
-export QWEN_PATH=/path/to/Qwen2.5-Omni-7B
-```
-
-## Use a trained model
-
-A portable bundle contains `encoder.pt`, `eeg_projector.pt`, `qwen_lora/`, and
-`bundle.json`. It does not contain the Qwen base model. Download the released
-weights from [Hugging Face](https://huggingface.co/LyJinAoki/EEG-Captioner):
-
-```bash
+python -m pip install -U huggingface_hub
 hf download LyJinAoki/EEG-Captioner --local-dir checkpoints/final
+hf download Qwen/Qwen2.5-Omni-7B --local-dir checkpoints/Qwen2.5-Omni-7B
+export QWEN_PATH="$PWD/checkpoints/Qwen2.5-Omni-7B"
 ```
 
-Existing trusted research weights can alternatively be exported:
+Model loading uses local files. The expected bundle layout is:
+
+```text
+checkpoints/final/
+├── bundle.json
+├── encoder.pt
+├── eeg_projector.pt
+└── qwen_lora/
+```
+
+### 3. Generate a caption or answer a question
+
+Use a preprocessed 10-second EEG segment in the [H5 format](docs/data.md). To convert your TUEG EDF files first:
 
 ```bash
-eeg-captioner export \
-  --encoder /path/to/eeg_understanding_v51_dualdomain_spatial25/best.pt \
-  --adapter /path/to/relcap_cont2_15k_f090/final \
-  --output checkpoints/final
+eeg-captioner preprocess --edf-root /path/to/tueg/edf \
+  --output data/processed --workers 4
+```
 
-eeg-captioner infer --bundle checkpoints/final --qwen-path "$QWEN_PATH" \
+Replace `example.h5` below with a generated H5 file. `--trial` indexes a recording within that file; `--start-sample` is the segment's starting sample at 200 Hz.
+
+```bash
+# Caption generation
+eeg-captioner infer \
+  --bundle checkpoints/final --qwen-path "$QWEN_PATH" \
   --eeg-h5 data/processed/example.h5 --trial 0 --start-sample 0
+
+# Signal-level question answering
+eeg-captioner infer \
+  --bundle checkpoints/final --qwen-path "$QWEN_PATH" \
+  --eeg-h5 data/processed/example.h5 --trial 0 --start-sample 0 \
+  --question 'During the early part of this EEG segment, which frequency band has the highest absolute power in the temporal region? Options: A. delta B. theta C. alpha D. beta E. gamma. Answer with only the option letter and label.'
 ```
 
-Add `--question '...'` for signal-level QA. Inputs must be preprocessed H5
-signals in **microvolts**, at **200 Hz**. The loader selects the fixed 20-channel
-order, inserts zeros only for a missing OZ, and divides by 100 exactly once.
-It rejects missing other channels, short segments and non-finite signals.
+Inputs must be in **microvolts at 200 Hz**. The loader selects the fixed 20-channel order and applies `/100` scaling internally. Only a missing OZ channel may be zero-filled. See [input requirements](docs/data.md) before supplying custom H5 files.
 
-Only export trusted research `.pt` checkpoints: migration reads their Python
-metadata. The portable encoder contains tensors and plain metadata and is
-loaded using `weights_only=True` with strict state-dictionary matching.
+The recorded one-segment inference check used approximately **16.9 GiB** of peak allocated GPU memory on an A100 40 GB. This is an observed compatibility check, not a minimum-memory guarantee; full training has different requirements.
 
-## Build the dataset
+## Data
 
-Obtain TUEG v2.0.2 separately under its access conditions. No recordings or
-derived patient samples are included in this source package.
+The paper dataset pairs **160,781 ten-second EEG segments** with feature-grounded captions and valid QA labels. Each segment has 25 candidate questions, filtered for numerical validity and ambiguity, across these families:
+
+| Property family | What the model compares |
+| --- | --- |
+| Dominant band | Frequency-band power within a fixed time interval and region |
+| Strongest region | Regional power within a fixed frequency band and interval |
+| Peak period | Early, Middle, and Last intervals for a fixed feature |
+| Temporal pattern | How a feature changes across the three intervals |
+| Lateral dominance | Left/right activity for a fixed interval and frequency band |
+
+TUEG v2.0.2 recordings must be obtained separately under the corpus access conditions. Recordings and derived patient samples are not included in this repository or the model bundle.
+
+After EDF preprocessing, build the annotations and manifest from the repository root:
 
 ```bash
-# EDF_ROOT/partition/subject/session/montage/*.edf
-eeg-captioner preprocess --edf-root /path/to/edf --output data/processed --workers 4
-
-# Source-space features require MNE's template/atlas assets; prepare once.
+# Prepare source-space template/atlas assets, then extract numerical features.
 eeg-captioner source-artifacts --config configs/features.yaml
 eeg-captioner features --config configs/features.yaml
 eeg-captioner summaries --input-glob 'data/features/*.h5' --output-dir data/summaries
 
-# This command sends numerical summaries to your chosen annotation endpoint.
+# Generate captions from numerical summaries through your annotation provider.
 export EEG_CAPTION_API_KEY='your-key'
 eeg-captioner annotate --summaries data/summaries --output data/captions \
   --base-url https://your-provider.example/v1 --model your-deepseek-model-id
 
+# Compute QA labels and create a portable training/evaluation manifest.
 eeg-captioner prepare --processed data/processed --summaries data/summaries \
   --captions data/captions --output data/manifest.jsonl
 ```
 
-The annotation prompt is included in `src/eeg_captioner/prompts/`.
-The paper used DeepSeek-V4-Flash; supply the corresponding model ID supported
-by your provider. No provider credentials or original API routing are bundled.
-Already generated captions can be placed in `data/captions` with names matching the
-summary stem. Generation is not deterministic across provider/model updates.
-Retain annotation metadata and original targets for reproducibility.
+The paper uses DeepSeek-V4-Flash for caption annotation. Supply your provider's corresponding model ID and endpoint; the [annotation prompt](src/eeg_captioner/prompts/caption_annotation.txt) is included. The annotation command sends numerical summaries to that endpoint. Existing captions can also be placed in `data/captions` with filenames matching the summary stems.
 
-See [data format and preprocessing](docs/data.md), including optional omission
-of source-network features for a reduced local test. The paper configuration
-enables those features; omitting them changes caption annotation inputs.
+See [data and preprocessing](docs/data.md) for channel order, QC, feature definitions, manifest schema, and split construction. The split is filename-disjoint and does not guarantee subject-disjoint evaluation. Keep annotation metadata and generated targets, since provider/model changes can affect regenerated captions.
 
-## Train the complete mainline
+## Training
 
-Run from the repository root. Paths in the example YAML files are relative to
-the current working directory; `${QWEN_PATH}` is expanded from the environment.
+Set `QWEN_PATH`, prepare `data/manifest.jsonl`, and run the full chain:
 
 ```bash
 bash scripts/train_chain.sh
-eeg-captioner evaluate --config configs/evaluate.yaml
 ```
 
-The script runs classifier pretraining, QA adaptation, then 15k steps each at
-caption fractions 0.25, 0.75 and 0.90. Each joint stage loads the previous stage's
-projector and LoRA, uses a new optimizer, and keeps the same encoder frozen.
-The last stage adds cosine LR decay. Each stage also works independently:
+| Stage | Trainable components | Steps | Configuration |
+| --- | --- | ---: | --- |
+| Encoder pretraining | Dual-Domain encoder + task-specific query decoders | 30,000 | [Encoder](configs/train_encoder.yaml) |
+| QA adaptation | Projector + Qwen LoRA | 30,000 | [QA](configs/train_qa.yaml) |
+| Joint QA/caption, caption fraction 0.25 | Projector + Qwen LoRA | 15,000 | [Joint 0.25](configs/train_joint_025.yaml) |
+| Joint QA/caption, caption fraction 0.75 | Projector + Qwen LoRA | 15,000 | [Joint 0.75](configs/train_joint_075.yaml) |
+| Joint QA/caption, caption fraction 0.90 | Projector + Qwen LoRA | 15,000 | [Joint 0.90](configs/train_joint_090.yaml) |
+
+The EEG encoder and Qwen base weights remain frozen during language adaptation. Each joint stage inherits the previous stage's projector/LoRA weights and starts a new optimizer. Caption fractions specify the share of sampled microbatches; the final stage adds cosine learning-rate decay.
+
+The supplied chain uses one GPU with batch size 48 for encoder training, then two GPUs with microbatch size 1 and gradient accumulation 2 for language adaptation (effective batch size 4). Adjust configurations for your hardware. Individual stages can also be launched directly:
 
 ```bash
 eeg-captioner train --config configs/train_encoder.yaml
-torchrun --standalone --nproc_per_node=2 -m eeg_captioner train --config configs/train_qa.yaml
+eeg-captioner export-encoder \
+  --source runs/encoder/best/model.pt --output checkpoints/encoder.pt
+torchrun --standalone --nproc_per_node=2 -m eeg_captioner train \
+  --config configs/train_qa.yaml
 ```
 
-Configure a new `output_dir` for every run. To resume an interrupted run, add
-`resume: runs/<run>/last` to its unchanged YAML. Resume restores optimizer and
-RNG state and skips completed sampled microbatches. Cross-hardware/DDP resumption
-is not claimed to be bit-for-bit identical.
+Use a new `output_dir` for each run. To resume the same interrupted stage, add `resume: runs/<run>/last` to its otherwise unchanged YAML. Details on checkpoint selection, optimizer/RNG restoration, and historical weight identity are in [reproduction notes](docs/reproduction.md).
 
-## Reproduction protocol
+## Evaluation
 
-This release preserves encoder/projector parameter names, input scaling,
-question order, label rules, prompts and lexical metrics. It defaults to
-**independent filename-disjoint validation and test evaluation**. Historical
-paper QA scores used a combined val+test diagnostic set also used for model
-selection; they must not be described as scores from this independent protocol.
-See [reproduction notes](docs/reproduction.md).
+With the manifest, bundle, and Qwen base model in place:
 
-GPT factual-consistency scores are not computed by the local lexical evaluator.
-The original per-example web-based judgments are not included in the supplied
-research artifacts. No replacement scores are fabricated.
+```bash
+eeg-captioner evaluate --config configs/evaluate.yaml
+```
 
-## Layout
+[`configs/evaluate.yaml`](configs/evaluate.yaml) evaluates signal-level QA and caption generation on `split: test`. The evaluator reports QA balanced accuracy, ROUGE-L, and corpus BLEU-4.
+
+- **Public protocol:** model selection uses validation data, with test evaluated separately.
+- **Historical paper protocol:** QA used a class-balanced diagnostic set of 2,540 questions drawn from validation and test filenames, also used for checkpoint selection. Fresh runs under the public protocol are not directly comparable to those table scores.
+- **Factual consistency:** the paper used GPT-5.6 Sol through the ChatGPT web interface. Per-example judgments are not bundled, and the local evaluator does not calculate this score.
+
+The [reproduction notes](docs/reproduction.md) explain metric aggregation, caption sampling, and protocol differences. The [validation record](docs/validation.md) distinguishes synthetic tests and model-loading checks from full-scale reproduction.
+
+## Repository layout
 
 ```text
-configs/                       Feature, training and evaluation recipes
-scripts/train_chain.sh         Complete mainline
+configs/                       Feature, training, and evaluation recipes
+scripts/train_chain.sh         End-to-end training and bundle export
 src/eeg_captioner/
-  preprocessing/               TUEG EDF -> subject H5
-  features/                    Numeric features, source artifacts, summaries
-  data/                        Manifest, QA rules, thresholds, sampling
-  models/                      Encoder, query heads, projector, Qwen interface
-  training/                    Classifier and distributed language training
-  evaluation/                  QA BA, ROUGE-L and corpus BLEU-4
-  prompts/                     Caption-annotation instructions
-tests/                         Numerical, data and language smoke tests
-docs/                          Data, reproduction, provenance and validation
+├── preprocessing/             TUEG EDF to subject H5
+├── features/                  Numerical features and summaries
+├── data/                      Manifest, QA rules, thresholds, sampling
+├── models/                    Encoder, query heads, projector, Qwen interface
+├── training/                  Classifier and distributed language training
+├── evaluation/                QA and caption metrics
+└── prompts/                   Caption annotation instructions
+tests/                         Numerical, data, and language checks
+docs/                          Data, reproduction, provenance, validation
 ```
 
-MIT licensed source code; see `LICENSE` and `NOTICE`. Dataset, model weights and
-template/atlas assets retain their separate upstream terms.
-See the [publication checklist](docs/validation.md#before-public-publication)
-before pushing the repository or publishing weights.
+For development checks:
+
+```bash
+python -m pip install -e '.[llm,preprocess,annotation,dev]'
+pytest -q
+```
+
+To export your own trained checkpoints into the inference bundle format:
+
+```bash
+eeg-captioner export --encoder runs/encoder/best/model.pt \
+  --adapter runs/joint_090/final --output checkpoints/final
+```
+
+Export only trusted research checkpoints: migration reads their Python metadata. Portable encoders are loaded with `weights_only=True` and strict state-dictionary matching. See [export details](docs/reproduction.md#export).
+
+## Citation
+
+To cite this code release:
+
+```bibtex
+@misc{jin_eeg_captioner,
+  title        = {EEG-Captioner: Grounding EEG-to-Language Generation in Fundamental Signal Properties},
+  author       = {Jin, Leyuan and Mei, Jiahao and Yuan, Yixuan and Li, Shimeng and Wu, Mengyue and Ding, Yue},
+  howpublished = {Research code},
+  url          = {https://github.com/lyJinAoki/EEG-Captioner}
+}
+```
+
+## License and acknowledgments
+
+Source code is released under the [MIT License](LICENSE). TUEG data, Qwen weights, and MNE template/atlas assets retain their respective upstream terms; see [NOTICE](NOTICE). We thank the developers and maintainers of these resources.
