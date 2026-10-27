@@ -2,7 +2,7 @@
 
 ### Grounding EEG-to-Language Generation in Fundamental Signal Properties
 
-[![Demo](https://img.shields.io/badge/Demo-Project%20page-24644d.svg)](https://eeg-captioner-demo.dewyaspen32.chatgpt.site)
+[![Demo](https://img.shields.io/badge/Demo-Project%20page-24644d.svg)](https://lyJinAoki.github.io/EEG-Captioner/)
 [![Paper](https://img.shields.io/badge/arXiv-2610.30995-b31b1b.svg)](https://arxiv.org/abs/2610.30995)
 [![Model weights](https://img.shields.io/badge/Weights-Hugging%20Face-yellow)](https://huggingface.co/LyJinAoki/EEG-Captioner)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
@@ -41,7 +41,7 @@ These are **paper-reported results**, not results from a fresh run of this relea
 
 ## Interactive project page
 
-Visit the [EEG-Captioner demo page](https://eeg-captioner-demo.dewyaspen32.chatgpt.site) for an interactive walkthrough of the five signal-level task families, the framework, and paper-reported results. The walkthrough uses a synthetic EEG example and authored answers; it does not run live model inference. Page source is in [demo/](demo/).
+Visit the [EEG-Captioner demo page](https://lyJinAoki.github.io/EEG-Captioner/) for an interactive walkthrough of the five signal-level task families, the framework, and paper-reported results. The walkthrough uses a synthetic EEG example and authored answers; it does not run live model inference. Page source is in [demo/](demo/).
 
 ## Quick start
 
